@@ -11,18 +11,23 @@ bottone.addEventListener('click', function () {
     const userAge = document.querySelector('#age').value
     let comparisonA = userAge < 21;
     let comparisonB = userAge > 63;
-
+    let price
+    let discount
+    let finalPrice
 
     if (comparisonA === true) {
-        let price = ((userKM * priceForKm) - ((userKM * priceForKm) / 100) * discountYoung)
-
-
+        let price = userKM * priceForKm;
+        let discount = (price / 100) * discountYoung
+        let finalPrice = (price - discount);
+        document.querySelector('#pricecalc').innerHTML = price.toFixed(2) + ' - ' + discount.toFixed(2) + ' = ' + finalPrice.toFixed(2)
     } else if (comparisonB == true) {
-        let price = ((userKM * priceForKm) - ((userKM * priceForKm) / 100) * discountOld)
-        console.log(price.toFixed(2) + '€');
+        let price = userKM * priceForKm;
+        let discount = (price / 100) * discountOld
+        let finalPrice = (price - discount);
+        document.querySelector('#pricecalc').innerHTML = price.toFixed(2) + ' - ' + discount.toFixed(2) + ' = ' + finalPrice.toFixed(2)
     } else {
-        let price = (userKM * priceForKm)
-        console.log(price.toFixed(2) + '€');
+        let price = userKM * priceForKm;
+
     }
 
     document.querySelector('#showage').innerHTML = userAge + ' anni'
