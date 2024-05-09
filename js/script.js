@@ -27,7 +27,7 @@ bottone.addEventListener('click', function () {
         document.querySelector('#pricecalc').innerHTML = price.toFixed(2) + ' - ' + discount.toFixed(2) + ' = ' + finalPrice.toFixed(2)
     } else {
         let price = userKM * priceForKm;
-
+        document.querySelector('#pricecalc').innerHTML = userKM + ' * ' + priceForKm + ' = ' + price.toFixed(2)
     }
 
     document.querySelector('#showage').innerHTML = userAge + ' anni'
