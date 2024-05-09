@@ -15,7 +15,8 @@ bottone.addEventListener('click', function () {
 
     if (comparisonA === true) {
         let price = ((userKM * priceForKm) - ((userKM * priceForKm) / 100) * discountYoung)
-        console.log(price.toFixed(2) + '€');
+
+
     } else if (comparisonB == true) {
         let price = ((userKM * priceForKm) - ((userKM * priceForKm) / 100) * discountOld)
         console.log(price.toFixed(2) + '€');
@@ -23,5 +24,8 @@ bottone.addEventListener('click', function () {
         let price = (userKM * priceForKm)
         console.log(price.toFixed(2) + '€');
     }
+
+    document.querySelector('#showage').innerHTML = userAge + ' anni'
+    document.querySelector('#showkm').innerHTML = userKM + ' km'
 })
 
